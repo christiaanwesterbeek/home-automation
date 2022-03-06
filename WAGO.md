@@ -1,5 +1,6 @@
 
 
+```
 root@PFC200-44194C:~ kbusmodbusslave --nodaemon -v7
 
 ======= CONFIGURATION =======
@@ -63,5 +64,4 @@ Waiting for a indication...
 <00><02><00><00><00><06><01><03><9C><41><00><64>
 Watchdog trigger
 Function: 3
-
-
+```
