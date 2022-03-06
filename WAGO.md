@@ -1,3 +1,8 @@
+## Adding KbusModbusPFCSlave to the PFC
+
+Via https://github.com/WAGO/pfc-howtos gevonden.
+
+Using Web-Based-Management(WBM) feature "Software-Upload" for upload and installing OPKG packages
 
 
 ```
