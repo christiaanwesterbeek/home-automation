@@ -122,3 +122,7 @@ in order to read a WORD variable stored at %MW0, use function FC3 and address 12
 Writing values is very similar.  One just has to remember that PLC's inputs are read-only.
 
 bron: https://www.edom-plc.pl/index.php/en/more-about-plc/functions/198-wstep-do-modbusa
+
+## node-red and modbus
+
+https://stevesnoderedguide.com/node-red-modbus
