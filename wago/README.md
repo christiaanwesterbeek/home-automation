@@ -26,7 +26,16 @@ https://wago.sharepoint.com/:u:/s/S_SupportCenterDownloads/EeDbOLXUsSNMnqZ1j8TRi
 
 3. Wacht tot het booten van de PLC klaar is. SYS, RUN, I/O branden nu groen, rood, groen. Door de DHCP instelling heeft de PLC nu een IP-adres gekregen.
 
-4. Middels het volgende commando, kom je erachter wat het IP-adres is geworden: ...
+4. Middels het volgende commando, kom je erachter wat het IP-adres is geworden:
+
+```
+pi@raspberrypi:~ $ sudo arp-scan --interface=eth0 --localnet
+Interface: eth0, type: EN10MB, MAC: e4:5f:01:82:d6:31, IPv4: 192.168.1.2
+Starting arp-scan 1.9.7 with 256 hosts (https://github.com/royhills/arp-scan)
+192.168.1.1	24:5a:4c:7a:d1:8c	(Unknown)
+192.168.1.10	42:4c:99:c4:fa:96	(Unknown: locally administered)
+192.168.1.40	00:30:de:44:19:4c	WAGO Kontakttechnik GmbH
+```
 
 5. Stel het statische IP-adres in met "Wago Ethernet Settings".
 
