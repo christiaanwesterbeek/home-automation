@@ -61,6 +61,8 @@ Klik op "Start Copy"|aan het kopieeren
 11. Verwijder de SD-kaart
 12. En schakel de voeding aan. Nu boot de PLC op zijn eigen flash geheugen en is na een minuut bereikbaar op 192.168.1.17.
 
+Overigens branden de SYS, RUN, I/O nog steeds groen, rood, groen. Dat is normaal. Er draait nog geen programma, althans zo begrijp ik dat nu.
+
 13. Probeer eens via ssh in te loggen op de PLC met root/wago en stel ook hier het nieuwe wachwoord prototype in.
 
 ```
