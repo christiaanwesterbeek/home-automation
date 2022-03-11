@@ -110,19 +110,44 @@ Na een paar seconden zie je het bericht dat het installeren is gelukt.
 
 Automatisch starten van modbus activeren.
 
+4. Copy the start-up script to PFC via ssh.
 ```
 pi@raspberrypi:~ $ scp /home/pi/Downloads/pfc-howtos-master/HowTo_AddKbusModbusSlave/pfc/etc_init.d/kbusmodbusslave root@192.168.1.17:/etc/init.d/kbusmodbusslave
 root@192.168.1.17's password: 
 kbusmodbusslave                                                                               100% 1606   397.0KB/s   00:00    
+```
+
+You need to enter the root password
+
+Create symbolic link in /etc/rc.d/ for start-up kbusmodbusslave on power-on.
+Open a terminal session to PFC
+
+```
 pi@raspberrypi:~ $ ssh root@192.168.1.17
 root@192.168.1.17's password: 
 
 
 WAGO Linux Terminal on PFC200-44194C.
 
+```
+You need to enter the root password
 
+Now on PFC side, create the sym-link
+
+```
 root@PFC200-44194C:~ ln -s /etc/init.d/kbusmodbusslave /etc/rc.d/S98_kbusmodbusslave
+```
+
+Make /etc/init.d/kbusmodbusslave executable
+```
 root@PFC200-44194C:~ chmod a+x /etc/init.d/kbusmodbusslave
+```
+
+Check for any ADI/DAL-Application(like PLC-Runtime) to be not started during start-up
+Check for link to start up PLC-Runtime
+If link S98_runtime is present delete it
+
+```
 root@PFC200-44194C:~ cd /etc/rc.d/
 root@PFC200-44194C:/etc/rc.d ll
 drwxr-xr-x    3 root     root          4032 Mar 11 11:27 .
@@ -178,6 +203,10 @@ lrwxrwxrwx    1 root     root            30 Dec 14 15:55 S99_featuredetect_switc
 lrwxrwxrwx    1 root     root            23 Dec 14 17:03 S99_finalize_root -> ../init.d/finalize_root
 lrwxrwxrwx    1 root     root            24 Dec 14 17:03 S99_logsystemstart -> ../init.d/logsystemstart
 lrwxrwxrwx    1 root     root            18 Dec 14 17:03 S99_ssl_post -> ../init.d/ssl_post
+```
+Belangrijk: zet nu de schakelaar op de PLC op RUN ipv STOP. Het kbusmodbusslave programma zal daardoor automatisch starten na reboot.
+
+```
 root@PFC200-44194C:/etc/rc.d reboot
 root@PFC200-44194C:/etc/rc.d Connection to 192.168.1.17 closed by remote host.
 Connection to 192.168.1.17 closed.
