@@ -21,11 +21,8 @@ Hierbij is de download link van de juiste Firmware. Voor de WAGO 750-8203 heb je
 https://wago.sharepoint.com/:u:/s/S_SupportCenterDownloads/EeDbOLXUsSNMnqZ1j8TRixMBjAxXk35erjkR4I2rLKXqPw?e=pJUJj7
 
 1. Schrijf image op de SD kaart met "Win32DiskImager" (Windows) of "balenaEtcher" (Mac)
-
 2. De PLC is nog uit, steek nu de WAGO SD kaart erin, en zet de stroom op de PLC aan.
-
 3. Wacht tot het booten van de PLC klaar is. SYS, RUN, I/O branden nu groen, rood, groen. Door de DHCP instelling heeft de PLC nu een IP-adres gekregen.
-
 4. Middels het volgende commando, kom je erachter wat het IP-adres is geworden:
 
 ```
@@ -41,16 +38,15 @@ Starting arp-scan 1.9.7 with 256 hosts (https://github.com/royhills/arp-scan)
 
 Hostname:	PFC200-44194C
 Description:	WAGO 750-8203 PFC200 2ETH CAN
-![image](https://user-images.githubusercontent.com/465989/157834401-8b54a2fa-387c-40e1-9b62-847f686c2c19.png)
 
 6. Log in met het fabriekgebruikersnaam en wachtwoord admin/wago en wijzig het wachtwoord naar prototype.
-
 7. Stel het statische IP-adres 192.168.1.17 in met "Wago Ethernet Settings".
 
-![image](https://user-images.githubusercontent.com/465989/157834753-f473c3f3-455e-450a-a5e2-f24da2e1459b.png)
+Login|Verander ethernet instellingen
+---|---
+![image](https://user-images.githubusercontent.com/465989/157834401-8b54a2fa-387c-40e1-9b62-847f686c2c19.png)|![image](https://user-images.githubusercontent.com/465989/157834753-f473c3f3-455e-450a-a5e2-f24da2e1459b.png)
 
 8. Klik op submit en open daarna in de browser https://192.168.1.17/ en login met admin/prototype
-
 9. Nu kun je de bootable image op de SD card kopieren naar het interne geheugen (flash) van de PLC. Ga daarvoor naar wbm / administration / Create Image. Bij "Create bootable image from active partition (SD)".
 
 Klik op "Start Copy"|aan het kopieeren
