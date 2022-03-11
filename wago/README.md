@@ -14,7 +14,7 @@ Dit stappenplan gaat uit van een uitgevoerde factory reset middels de volgende h
 
 Als dat goed is gegaan, branden alle 12 leds (SYS, RUN, I/O, etc) ononderbroken rood. Daarna zet je de PLC aan en uit. Dan zijn de SYS en I/O led's ononderbroken groen, en de RUN led knippert groen, en de andere leds zijn uit. Als de RUN-led groen knippert, betekent dit dat het PLC-programma in een debug is. Dit is de uitgangssituatie voor de verdere installatie.
 
-#### Firmware en configuratie
+### Firmware en configuratie
 
 Hierbij is de download link van de juiste Firmware. Voor de WAGO 750-8203 heb je de 8x0x variant nodig.
 
@@ -80,7 +80,7 @@ Connection to 192.168.1.17 closed.
 pi@raspberrypi:~ $ 
 ```
 
-#### Modbus activeren
+### Modbus activeren
 
 Sinds de factory reset en de installatie staat de switch op de PLC nog op de STOP stand en draait dus geen programma.
 
@@ -214,13 +214,10 @@ Connection to 192.168.1.17 closed.
 pi@raspberrypi:~ $ 
 ```
 
-#### Modbus adres-configuratie bekijken
+### Modbus adres-configuratie bekijken
 
 1. Zet de schakelaar op de PLC van RUN naar STOP.
-2. Login op de PLC en draai een commando
-3. Kopy-paste die informatie hieronder.
-4. Zet de schakelaar op de PLC van STOP naar RUN.
-
+2. Login op de PLC
 
 ```
 pi@raspberrypi:~ $ ssh root@192.168.1.17
@@ -230,7 +227,18 @@ root@192.168.1.17's password:
 WAGO Linux Terminal on PFC200-44194C.
 
 
+root@PFC200-44194C:~ 
+```
+
+3. Start nu kbusmodbusslave met het volgende commando
+
+```
 root@PFC200-44194C:~ /etc/init.d/runtime stop
+```
+
+4. Copy-paste die informatie hieronder.
+
+```
 Terminate Runtime...done
 root@PFC200-44194C:~ kbusmodbusslave --nodaemon -v8
 
@@ -316,7 +324,9 @@ Modbus loop exit
 Watchdog stop
 root@PFC200-44194C:~
 ```
-Zet op dit moment die schakelaar weer naar RUN.
+
+5. Zet de schakelaar op de PLC van STOP naar RUN.
+6. Reboot de PLC zodat de kbusmodbusslave weer automatisch start
 
 ```
 root@PFC200-44194C:~ reboot
