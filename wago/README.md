@@ -108,6 +108,81 @@ ipk file installeren|uploading...
 
 Na een paar seconden zie je het bericht dat het installeren is gelukt.
 
+Automatisch starten van modbus activeren.
+
+```
+pi@raspberrypi:~ $ scp /home/pi/Downloads/pfc-howtos-master/HowTo_AddKbusModbusSlave/pfc/etc_init.d/kbusmodbusslave root@192.168.1.17:/etc/init.d/kbusmodbusslave
+root@192.168.1.17's password: 
+kbusmodbusslave                                                                               100% 1606   397.0KB/s   00:00    
+pi@raspberrypi:~ $ ssh root@192.168.1.17
+root@192.168.1.17's password: 
+
+
+WAGO Linux Terminal on PFC200-44194C.
+
+
+root@PFC200-44194C:~ ln -s /etc/init.d/kbusmodbusslave /etc/rc.d/S98_kbusmodbusslave
+root@PFC200-44194C:~ chmod a+x /etc/init.d/kbusmodbusslave
+root@PFC200-44194C:~ cd /etc/rc.d/
+root@PFC200-44194C:/etc/rc.d ll
+drwxr-xr-x    3 root     root          4032 Mar 11 11:27 .
+drwxr-xr-x   38 root     root          7176 Mar 11 11:23 ..
+drwxr-xr-x    2 root     root           312 Dec 14 17:08 disabled
+lrwxrwxrwx    1 root     root            18 Dec 14 17:03 S00_boot_wdg -> ../init.d/boot_wdg
+lrwxrwxrwx    1 root     root            23 Dec 14 16:09 S00_cgroupsconfig -> ../init.d/cgroupsconfig
+lrwxrwxrwx    1 root     root            19 Dec 14 17:04 S00_check_rtc -> ../init.d/check_rtc
+lrwxrwxrwx    1 root     root            14 Dec 14 16:02 S00_udev -> ../init.d/udev
+lrwxrwxrwx    1 root     root            22 Dec 14 17:03 S01_device-setup -> ../init.d/device-setup
+lrwxrwxrwx    1 root     root            18 Dec 14 16:03 S01_firewall -> ../init.d/firewall
+lrwxrwxrwx    1 root     root            22 Dec 14 17:04 S01_link_devices -> ../init.d/link_devices
+lrwxrwxrwx    1 root     root            19 Dec 14 17:03 S01_mountrw -> ../init.d/remountrw
+lrwxrwxrwx    1 root     root            19 Dec 14 17:03 S01_omsdaemon -> ../init.d/omsdaemon
+lrwxrwxrwx    1 root     root            27 Dec 14 17:03 S02a_config_usb_gadget -> ../init.d/config_usb_gadget
+lrwxrwxrwx    1 root     root            28 Dec 14 17:04 S02_determine_hostname -> ../init.d/determine_hostname
+lrwxrwxrwx    1 root     root            20 Dec 14 16:14 S02_networking -> ../init.d/networking
+lrwxrwxrwx    1 root     root            14 Dec 14 15:52 S03_dbus -> ../init.d/dbus
+lrwxrwxrwx    1 root     root            17 Dec 14 15:52 S03_rc-once -> ../init.d/rc-once
+lrwxrwxrwx    1 root     root            31 Dec 14 17:03 S04_auto_firmware_restore -> ../init.d/auto_firmware_restore
+lrwxrwxrwx    1 root     root            15 Dec 14 16:14 S10_crond -> ../init.d/crond
+lrwxrwxrwx    1 root     root            19 Dec 14 16:44 S10_syslog-ng -> ../init.d/syslog-ng
+lrwxrwxrwx    1 root     root            15 Dec 14 16:14 S11_inetd -> ../init.d/inetd
+lrwxrwxrwx    1 root     root            33 Dec 14 16:03 S12_validate_gateway_config -> ../init.d/validate_gateway_config
+lrwxrwxrwx    1 root     root            18 Dec 14 16:03 S13_netconfd -> ../init.d/netconfd
+lrwxrwxrwx    1 root     root            33 Dec 14 16:04 S14a_create_factory_settings -> ../init.d/create_factory_settings
+lrwxrwxrwx    1 root     root            18 Dec 14 17:03 S14_mounthd2 -> ../init.d/mounthd2
+lrwxrwxrwx    1 root     root            13 Dec 14 16:19 S15_drm -> ../init.d/drm
+lrwxrwxrwx    1 root     root            14 Dec 14 17:03 S16_rauc -> ../init.d/rauc
+lrwxrwxrwx    1 root     root            16 Dec 14 16:14 S17_sysctl -> ../init.d/sysctl
+lrwxrwxrwx    1 root     root            19 Dec 14 15:52 S20_ledserver -> ../init.d/ledserver
+lrwxrwxrwx    1 root     root            30 Dec 14 16:25 S20_writeSnmpDefaultConf -> ../init.d/writeSnmpDefaultConf
+lrwxrwxrwx    1 root     root            20 Dec 14 15:52 S21_logforward -> ../init.d/logforward
+lrwxrwxrwx    1 root     root            27 Dec 14 16:14 S21_networking-finish -> ../init.d/networking-finish
+lrwxrwxrwx    1 root     root            18 Dec 14 17:02 S22_ipwatchd -> ../init.d/ipwatchd
+lrwxrwxrwx    1 root     root            17 Dec 14 16:41 S24_dnsmasq -> ../init.d/dnsmasq
+lrwxrwxrwx    1 root     root            18 Dec 14 16:50 S25_dropbear -> ../init.d/dropbear
+lrwxrwxrwx    1 root     root            14 Dec 14 17:03 S60_mdmd -> ../init.d/mdmd
+lrwxrwxrwx    1 root     root            22 Dec 14 16:44 S70_logbootevent -> ../init.d/logbootevent
+lrwxrwxrwx    1 root     root            22 Dec 14 16:33 S86_opcua-server -> ../init.d/opcua-server
+lrwxrwxrwx    1 root     root            24 Dec 14 17:03 S90_cbm_set_config -> ../init.d/cbm_set_config
+lrwxrwxrwx    1 root     root            23 Dec 14 17:03 S90_config_serial -> ../init.d/config_serial
+lrwxrwxrwx    1 root     root            20 Dec 14 16:03 S90_mdmd_check -> ../init.d/mdmd_check
+lrwxrwxrwx    1 root     root            17 Dec 14 16:14 S90_modules -> ../init.d/modules
+lrwxrwxrwx    1 root     root            29 Dec 14 16:55 S90_set_thread_priority -> ../init.d/set_thread_priority
+lrwxrwxrwx    1 root     root            21 Dec 14 16:03 S90_telecontrol -> ../init.d/telecontrol
+lrwxrwxrwx    1 root     root            26 Dec 14 16:14 S92_rt-set-bandwidth -> ../init.d/rt-set-bandwidth
+lrwxrwxrwx    1 root     root            18 Dec 14 16:19 S95_progexec -> ../init.d/progexec
+lrwxrwxrwx    1 root     root            18 Dec 14 16:49 S96_lighttpd -> ../init.d/lighttpd
+lrwxrwxrwx    1 root     root            27 Dec 14 16:34 S97_serial_dispatcher -> ../init.d/serial_dispatcher
+lrwxrwxrwx    1 root     root            27 Mar 11 11:27 S98_kbusmodbusslave -> /etc/init.d/kbusmodbusslave
+lrwxrwxrwx    1 root     root            30 Dec 14 15:55 S99_featuredetect_switch -> ../init.d/featuredetect_switch
+lrwxrwxrwx    1 root     root            23 Dec 14 17:03 S99_finalize_root -> ../init.d/finalize_root
+lrwxrwxrwx    1 root     root            24 Dec 14 17:03 S99_logsystemstart -> ../init.d/logsystemstart
+lrwxrwxrwx    1 root     root            18 Dec 14 17:03 S99_ssl_post -> ../init.d/ssl_post
+root@PFC200-44194C:/etc/rc.d reboot
+root@PFC200-44194C:/etc/rc.d Connection to 192.168.1.17 closed by remote host.
+Connection to 192.168.1.17 closed.
+pi@raspberrypi:~ $ 
+```
 
 Using Web-Based-Management(WBM) feature "Software-Upload" for upload and installing OPKG packages
 
