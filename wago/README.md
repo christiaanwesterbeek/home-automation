@@ -56,6 +56,27 @@ Description:	WAGO 750-8203 PFC200 2ETH CAN
 ---|---
 ![image](https://user-images.githubusercontent.com/465989/157837772-341c2a15-1d3c-4888-88ea-d428d3e2ee55.png)|![image](https://user-images.githubusercontent.com/465989/157838123-b8e26877-6019-412b-899e-223e3b910261.png)
 
+10. Probeer eens via ssh in te loggen op de PLC en stel ook hier een nieuw wachwoord in.
+
+
+```
+pi@raspberrypi:~ $ ssh root@192.168.1.17
+root@192.168.1.17's password: 
+
+
+WAGO Linux Terminal on PFC200-44194C.
+
+
+Security message: please change your password!
+
+New password: 
+Retype new password: 
+passwd: password updated successfully
+root@PFC200-44194C:~ exit
+logout
+Connection to 192.168.1.17 closed.
+pi@raspberrypi:~ $ 
+```
 
 ## Adding KbusModbusPFCSlave to the PFC
 
