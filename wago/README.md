@@ -80,7 +80,7 @@ Connection to 192.168.1.17 closed.
 pi@raspberrypi:~ $ 
 ```
 
-#### Adding KbusModbusPFCSlave to the PFC
+#### Modbus activeren
 
 Sinds de factory reset en de installatie staat de switch op de PLC nog op de STOP stand en draait dus geen programma.
 
@@ -90,10 +90,12 @@ Standaard draait CODESYS 2|Dit passen we aan naar none (en submit)
 ---|---
 ![image](https://user-images.githubusercontent.com/465989/157842285-103621d1-7083-4820-b3fe-8a830478e7c5.png)|![image](https://user-images.githubusercontent.com/465989/157844007-ccdfe86e-83d8-44e8-9541-cc9eb4ab7065.png)
 
-
 De SYS, RUN, I/O LEDs branden nu groen, knipperend groen, groen
 
-Via https://github.com/WAGO/pfc-howtos gevonden.
+We gaan nu de KbusModbusPFCSlave installeren en draaien en zorgt voor directe toegang tot KBus-IO-Modules voor Node.js/node-red door modbus requests te sturen. De downloads en beschrijving van KbusModbusPFCSlave staan [hier](https://github.com/WAGO/pfc-howtos/tree/master/HowTo_AddKbusModbusSlave), maar schrijf ik alsnog hier in stappen uit.
+
+2. Download https://github.com/WAGO/pfc-howtos/blob/master/HowTo_AddKbusModbusSlave/packages/kbusmodbusslave_1.5.1_armhf.ipk
+3. 
 
 Using Web-Based-Management(WBM) feature "Software-Upload" for upload and installing OPKG packages
 
