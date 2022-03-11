@@ -51,13 +51,17 @@ Description:	WAGO 750-8203 PFC200 2ETH CAN
 
 8. Klik op submit en open daarna in de browser https://192.168.1.17/ en login met admin/prototype
 
-9. Nu kun je de bootable image op de SD card kopieren naar het interne geheugen (flash) van de PLC. Ga daarvoor naar wbm / administration / Create Image. Bij "Create bootable image from active partition (SD)", klik op "Start Copy".
-.|.
+9. Nu kun je de bootable image op de SD card kopieren naar het interne geheugen (flash) van de PLC. Ga daarvoor naar wbm / administration / Create Image. Bij "Create bootable image from active partition (SD)".
+
+Klik op "Start Copy"|aan het kopieeren
 ---|---
 ![image](https://user-images.githubusercontent.com/465989/157837772-341c2a15-1d3c-4888-88ea-d428d3e2ee55.png)|![image](https://user-images.githubusercontent.com/465989/157838123-b8e26877-6019-412b-899e-223e3b910261.png)
 
-10. Probeer eens via ssh in te loggen op de PLC en stel ook hier een nieuw wachwoord in.
+10. Schakel de voeding uit om de controller uit te schakelen.
+11. Verwijder de SD-kaart
+12. En schakel de voeding aan. Nu boot de PLC op zijn eigen flash geheugen en is na een minuut bereikbaar op 192.168.1.17.
 
+13. Probeer eens via ssh in te loggen op de PLC met root/wago en stel ook hier het nieuwe wachwoord prototype in.
 
 ```
 pi@raspberrypi:~ $ ssh root@192.168.1.17
