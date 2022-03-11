@@ -7,22 +7,40 @@ Het doel is niet om in de PLC te programmeren, maar de DI porten uitlezen en DO 
 Het is mogelijk om DOCKER containers op de WAGO PFC te draaien waaronder ook een MODBUS container. Hoe je dit kunt doen, wordt in de onderstaande Youtube film uitgelegd. [WAGO PFC200 G2 Modbus Slave KBUS Docker Container](https://www.youtube.com/watch?v=TCV_BqcwM30). Maar dit lijkt niet mogelijk zou later blijken, omdat tijdens het uploaden van de docker.ipk file een error optreedt.
 
 ### Installatie
+
 Dit stappenplan gaat uit van een uitgevoerde factory reset middels de volgende handeling beschreven in de [handleiding](https://asset.conrad.com/media10/add/160267/c1/-/en/001369150ML02/mode-demploi-1369150-api-controleur-wago-pfc200-2eth-can-750-8203-24-vdc-1-pcs.pdf).
 
 > Set the mode selector switch to “RESET” and press the Reset button (RST) for 1 … 8 seconds. Briefly release the Reset button (RST) (< 1 second) and press it again until the “CAN” LED lights up red. If the “CAN” LED lights up red, release the mode selector switch and the Reset button. After the first 1 … 8 seconds, the controller reboots (all LEDs light up orange) and after another 3 seconds, the “Factory reset” process begins. The process is indicated by all LEDs lighting up red in succession.
 
 Als dat goed is gegaan, branden alle 12 leds (SYS, RUN, I/O, etc) ononderbroken rood. Daarna zet je de PLC aan en uit. Dan zijn de SYS en I/O led's ononderbroken groen, en de RUN led knippert groen, en de andere leds zijn uit. Als de RUN-led groen knippert, betekent dit dat het PLC-programma in een debug is. Dit is de uitgangssituatie voor de verdere installatie.
 
-#### Firmware update
+#### Firmware op SD-kaart
 
-...
+Hierbij is de download link van de juiste Firmware. Voor de WAGO 750-8203 heb je de 8x0x variant nodig.
+
+https://wago.sharepoint.com/:u:/s/S_SupportCenterDownloads/EeDbOLXUsSNMnqZ1j8TRixMBjAxXk35erjkR4I2rLKXqPw?e=pJUJj7
+
+1. Schrijf image op de WAGO SD kaart met "Win32DiskImager" (Windows) of "balenaEtcher" (Mac)
+
+2. De PLC is nog uit, steek nu de WAGO SD kaart erin, en zet de stroom op de PLC aan.
+
+3. Wacht tot het booten van de PLC klaar is. SYS, RUN, I/O branden nu groen, rood, groen. Door de DHCP instelling heeft de PLC nu een IP-adres gekregen.
+
+4. Middels het volgende commando, kom je erachter wat het IP-adres is geworden: ...
+
+5. Stel het statische IP-adres in met "Wago Ethernet Settings".
+
+6. In verband met wijzigingen in het WebBasedManagement (WBM), dient u de volledige browser cache te verwijderen (!) en de browser daarna opnieuw te starten.
+
+7. Open "WebBasedManagement / Administraties - Menue / Create Image // Create bootable image from active partition (SD) // Start Copy".
+
+8. WAGO Ethernet instellingen is in ieder geval vereist in versie 6.8.2.2. Om deze versie te downloaden, klik op de volgende link: https://wago.sharefile.eu/d-s6d218ea736c4918a
 
 ## Adding KbusModbusPFCSlave to the PFC
 
 Via https://github.com/WAGO/pfc-howtos gevonden.
 
 Using Web-Based-Management(WBM) feature "Software-Upload" for upload and installing OPKG packages
-
 
 ```
 root@PFC200-44194C:~ kbusmodbusslave --nodaemon -v7
@@ -48,15 +66,15 @@ Found kbus device on: 5
 KBUS device open OK
 KBUS set to application state: 1
 
-        .KbusBitCount: 288 
-        .TerminalCount: 6 
-        .ErrorCode: 0 
-        .ErrorArg: 0 
-        .ErrorPos: 0 
-        .BitCountAnalogInput: 320 
-        .BitCountAnalogOutput: 256 
-        .BitCountDigitalInput: 16 
-        .BitCountDigitalOutput: 16 
+        .KbusBitCount: 288
+        .TerminalCount: 6
+        .ErrorCode: 0
+        .ErrorArg: 0
+        .ErrorPos: 0
+        .BitCountAnalogInput: 320
+        .BitCountAnalogOutput: 256
+        .BitCountDigitalInput: 16
+        .BitCountDigitalOutput: 16
 Offset: IN: 40 - OUT: 32
 
  Pos:1:	 Type: 750-4XX / 16DI	 BitOffsetOut:0;	 BitSizeOut:0;	 BitOffsetIn:320;	 BitSizeIn:16;	 Channels:0;	 PiFormat:0;
