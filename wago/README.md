@@ -104,7 +104,8 @@ Downloaden|Uitpakken
 
 ipk file installeren|uploading...
 ---|---
-![image](https://user-images.githubusercontent.com/465989/157848678-06366ff1-2023-4c1c-b80b-a2d8bcf77931.png)|![image](https://user-images.githubusercontent.com/465989/157848752-992e526e-9e8b-4855-8901-06ea23b55cb6.png)
+![image](https://user-images.githubusercontent.com/465989/157853917-c27fadd4-7a57-475d-a171-0523e5662376.png)|![image](https://user-images.githubusercontent.com/465989/157853575-95c93f9f-f8a0-4bb0-b014-a656386aed5d.png)
+
 
 Na een paar seconden zie je het bericht dat het installeren is gelukt.
 
