@@ -16,7 +16,7 @@ Dit stappenplan gaat uit van een uitgevoerde factory reset middels de volgende h
 
 Als dat goed is gegaan, branden alle 12 leds (SYS, RUN, I/O, etc) ononderbroken rood. Daarna zet je de PLC uit en aan. Dan zijn de SYS en I/O LEDs ononderbroken groen, en de RUN led knippert groen, en de andere LEDs zijn uit. Als de RUN-led groen knippert, betekent dit dat het PLC geen programma draait of in een debug is. Dit is de uitgangssituatie voor de verdere installatie.
 
-Zet de PLC nu uit door de stroom eraf te helen.
+Zet de PLC nu uit door de stroom eraf te halen.
 Houdt de schakelaar op de PLC gedurende onderstaande procedure op STOP. Pas helemaal aan het einde van onderstaande procedure zetten we deze weer op RUN.
 
 ### Firmware en configuratie
