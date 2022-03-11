@@ -6,6 +6,8 @@ Het doel is niet om in de PLC te programmeren, maar de DI porten uitlezen en DO 
 
 Het is mogelijk om DOCKER containers op de WAGO PFC te draaien waaronder ook een MODBUS container. Hoe je dit kunt doen, wordt in de onderstaande Youtube film uitgelegd. [WAGO PFC200 G2 Modbus Slave KBUS Docker Container](https://www.youtube.com/watch?v=TCV_BqcwM30). Maar dit lijkt niet mogelijk zou later blijken, omdat tijdens het uploaden van de docker.ipk file een error optreedt.
 
+In plaats hiervan gaan we de KbusModbusPFCSlave installeren en automatisch draaien. Hierdoor is directe toegang tot KBus-IO-Modules voor Node.js/node-red door modbus requests te sturen.
+
 ### Installatie
 
 Dit stappenplan gaat uit van een uitgevoerde factory reset middels de volgende handeling beschreven in de [handleiding](https://asset.conrad.com/media10/add/160267/c1/-/en/001369150ML02/mode-demploi-1369150-api-controleur-wago-pfc200-2eth-can-750-8203-24-vdc-1-pcs.pdf).
