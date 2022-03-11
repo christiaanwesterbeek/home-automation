@@ -61,7 +61,7 @@ Klik op "Start Copy"|aan het kopieeren
 11. Verwijder de SD-kaart
 12. En schakel de voeding aan. Nu boot de PLC op zijn eigen flash geheugen en is na een minuut bereikbaar op 192.168.1.17.
 
-Overigens branden de SYS, RUN, I/O nog steeds groen, rood, groen. Dat is normaal. Er draait nog geen programma, althans zo begrijp ik dat nu.
+Overigens branden de SYS, RUN, I/O LEDs nog steeds groen, rood, groen. Dat is normaal. Er draait nog geen programma, althans zo begrijp ik dat nu.
 
 13. Probeer eens via ssh in te loggen op de PLC met root/wago en stel ook hier het nieuwe wachwoord prototype in.
 
@@ -84,7 +84,17 @@ Connection to 192.168.1.17 closed.
 pi@raspberrypi:~ $ 
 ```
 
-## Adding KbusModbusPFCSlave to the PFC
+#### Adding KbusModbusPFCSlave to the PFC
+
+Sinds de factory reset en de installatie staat de switch op de PLC nog op de STOP stand en draait dus geen programma.
+
+1. Verander de runtime naar e!RUNTIME
+
+Standaard draait CODESYS 2|Dit passen we aan naar e!RUNTIME (en submit)
+---|---
+![image](https://user-images.githubusercontent.com/465989/157842285-103621d1-7083-4820-b3fe-8a830478e7c5.png)|![image](https://user-images.githubusercontent.com/465989/157842453-ebfe683c-9b7c-4bbe-b9dd-89a59129765d.png)
+
+De SYS, RUN, I/O LEDs branden nu groen, knipperend groen, groen
 
 Via https://github.com/WAGO/pfc-howtos gevonden.
 
