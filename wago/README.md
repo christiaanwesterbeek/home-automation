@@ -14,9 +14,9 @@ Dit stappenplan gaat uit van een uitgevoerde factory reset middels de volgende h
 
 > Set the mode selector switch to “RESET” and press the Reset button (RST) for 1 … 8 seconds. Briefly release the Reset button (RST) (< 1 second) and press it again until the “CAN” LED lights up red. If the “CAN” LED lights up red, release the mode selector switch and the Reset button. After the first 1 … 8 seconds, the controller reboots (all LEDs light up orange) and after another 3 seconds, the “Factory reset” process begins. The process is indicated by all LEDs lighting up red in succession.
 
-Als dat goed is gegaan, branden alle 12 leds (SYS, RUN, I/O, etc) ononderbroken rood. Daarna zet je de PLC aan en uit. Dan zijn de SYS en I/O led's ononderbroken groen, en de RUN led knippert groen, en de andere leds zijn uit. Als de RUN-led groen knippert, betekent dit dat het PLC-programma in een debug is. Dit is de uitgangssituatie voor de verdere installatie.
+Als dat goed is gegaan, branden alle 12 leds (SYS, RUN, I/O, etc) ononderbroken rood. Daarna zet je de PLC uit en aan. Dan zijn de SYS en I/O LEDs ononderbroken groen, en de RUN led knippert groen, en de andere LEDs zijn uit. Als de RUN-led groen knippert, betekent dit dat het PLC geen programma draait of in een debug is. Dit is de uitgangssituatie voor de verdere installatie.
 
-Zet de PLC nu uit door de stroom erf te helen.
+Zet de PLC nu uit door de stroom eraf te helen.
 Houdt de schakelaar op de PLC gedurende onderstaande procedure op STOP. Pas helemaal aan het einde van onderstaande procedure zetten we deze weer op RUN.
 
 ### Firmware en configuratie
