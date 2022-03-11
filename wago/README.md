@@ -88,11 +88,12 @@ pi@raspberrypi:~ $
 
 Sinds de factory reset en de installatie staat de switch op de PLC nog op de STOP stand en draait dus geen programma.
 
-1. Verander de runtime naar e!RUNTIME
+1. Verander de runtime naar "none"
 
-Standaard draait CODESYS 2|Dit passen we aan naar e!RUNTIME (en submit)
+Standaard draait CODESYS 2|Dit passen we aan naar none (en submit)
 ---|---
-![image](https://user-images.githubusercontent.com/465989/157842285-103621d1-7083-4820-b3fe-8a830478e7c5.png)|![image](https://user-images.githubusercontent.com/465989/157842453-ebfe683c-9b7c-4bbe-b9dd-89a59129765d.png)
+![image](https://user-images.githubusercontent.com/465989/157842285-103621d1-7083-4820-b3fe-8a830478e7c5.png)|![image](https://user-images.githubusercontent.com/465989/157844007-ccdfe86e-83d8-44e8-9541-cc9eb4ab7065.png)
+
 
 De SYS, RUN, I/O LEDs branden nu groen, knipperend groen, groen
 
