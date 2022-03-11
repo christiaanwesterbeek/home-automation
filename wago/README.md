@@ -210,7 +210,7 @@ lrwxrwxrwx    1 root     root            24 Dec 14 17:03 S99_logsystemstart -> .
 lrwxrwxrwx    1 root     root            18 Dec 14 17:03 S99_ssl_post -> ../init.d/ssl_post
 ```
 
-Belangrijk: zet nu de schakelaar op de PLC op RUN ipv STOP. Het kbusmodbusslave programma zal daardoor automatisch starten na reboot.
+Belangrijk: zet nu de schakelaar op de PLC van STOP naar RUN. Het kbusmodbusslave programma zal daardoor automatisch starten na reboot.
 
 ```
 root@PFC200-44194C:/etc/rc.d reboot
@@ -218,6 +218,8 @@ root@PFC200-44194C:/etc/rc.d Connection to 192.168.1.17 closed by remote host.
 Connection to 192.168.1.17 closed.
 pi@raspberrypi:~ $ 
 ```
+
+Modbus is nu beschikbaar voor node-red 🎉
 
 ### Modbus configuratie bekijken
 
