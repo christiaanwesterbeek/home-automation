@@ -100,6 +100,14 @@ Downloaden|Uitpakken
 ---|---
 ![image](https://user-images.githubusercontent.com/465989/157847774-017f8f3a-2d8a-474d-9887-338c450d5b22.png)|![image](https://user-images.githubusercontent.com/465989/157848141-41a48beb-f547-43f2-a459-ae7fb283dbc9.png)
 
+3. Gebruik wbm en ga naar Configuration > Software Uploads en selecteer het bestand /home/pi/Downloads/pfc-howtos-master/HowTo_AddKbusModbusSlave/packages/kbusmodbusslave_1.5.1_armhf.ipk
+
+ipk file installeren|uploading...
+---|---
+![image](https://user-images.githubusercontent.com/465989/157848678-06366ff1-2023-4c1c-b80b-a2d8bcf77931.png)|![image](https://user-images.githubusercontent.com/465989/157848752-992e526e-9e8b-4855-8901-06ea23b55cb6.png)
+
+Na een paar seconden zie je het bericht dat het installeren is gelukt.
+
 
 Using Web-Based-Management(WBM) feature "Software-Upload" for upload and installing OPKG packages
 
