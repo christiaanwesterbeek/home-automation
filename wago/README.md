@@ -94,8 +94,12 @@ De SYS, RUN, I/O LEDs branden nu groen, knipperend groen, groen
 
 We gaan nu de KbusModbusPFCSlave installeren en draaien en zorgt voor directe toegang tot KBus-IO-Modules voor Node.js/node-red door modbus requests te sturen. De downloads en beschrijving van KbusModbusPFCSlave staan [hier](https://github.com/WAGO/pfc-howtos/tree/master/HowTo_AddKbusModbusSlave), maar schrijf ik alsnog hier in stappen uit.
 
-2. Download https://github.com/WAGO/pfc-howtos/blob/master/HowTo_AddKbusModbusSlave/packages/kbusmodbusslave_1.5.1_armhf.ipk
-3. 
+2. Download de gehele pfc howto repo en pak deze uit.
+
+Downloaden|Uitpakken
+---|---
+![image](https://user-images.githubusercontent.com/465989/157847774-017f8f3a-2d8a-474d-9887-338c450d5b22.png)|![image](https://user-images.githubusercontent.com/465989/157848141-41a48beb-f547-43f2-a459-ae7fb283dbc9.png)
+
 
 Using Web-Based-Management(WBM) feature "Software-Upload" for upload and installing OPKG packages
 
